@@ -20,7 +20,10 @@ public class ReadFile {
 			String line;
 			while ((line = bfr.readLine()) != null) {
 				System.out.println(line);
+				// you must comment out last part code 'fr.read()', or there is nothing to
+				// readLine.
 			}
+			System.out.println(line);
 
 		} catch (Exception e) {
 			e.printStackTrace();
