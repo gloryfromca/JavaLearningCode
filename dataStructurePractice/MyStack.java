@@ -55,6 +55,14 @@ public class MyStack<T> {
 			return Optional.ofNullable(null);
 		}
 	}
+	
+	public Optional<T> peek() throws ArrayIndexOutOfBoundsException {
+			try {
+				return Optional.ofNullable(stackArray[top]);
+			} catch (ArrayIndexOutOfBoundsException e) {
+				return Optional.ofNullable(null);
+			}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -67,10 +75,13 @@ public class MyStack<T> {
 		//java.lang.ClassCastException
 		//System.out.println("length:" + theStack.stackArray.length);
 		System.out.println("top:" + theStack.top);
+		System.out.println(theStack.peek());
 		System.out.println(theStack.pop());
 		System.out.println(theStack.pop().get());
 		System.out.println(theStack.pop());
 		System.out.println(theStack.pop());
+		System.out.println(theStack.notEmpty());
+		System.out.println(theStack.peek());
 	}
 
 }

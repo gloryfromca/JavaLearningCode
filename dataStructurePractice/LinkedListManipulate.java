@@ -36,6 +36,9 @@ public class LinkedListManipulate {
 		System.out.println(f1);
 		System.out.println(al1);
 
+		llist.set(2, "d");
+		System.out.println(llist);
+
 		// a simple llist
 		LinkedListManipulate stack = new LinkedListManipulate();
 		for (int i = 0; i < 40; i++) {
