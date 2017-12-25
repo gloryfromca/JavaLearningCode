@@ -11,6 +11,7 @@ public class DetectionPort {
 		ServerSocket ssk = null;
 		for (int port = min; port < max + 1; port++) {
 			try {
+				
 				ssk = new ServerSocket(port);
 				System.out.println("port:" + port + " is OK!");
 			} catch (Exception e) {
