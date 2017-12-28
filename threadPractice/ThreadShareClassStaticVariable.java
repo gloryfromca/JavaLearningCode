@@ -1,13 +1,13 @@
 package threadPractice;
 
-public class SimplePriorities extends Thread {
+public class ThreadShareClassStaticVariable extends Thread {
 	// class static variables are shared across all threads in java.
 	// a normal variable (instance variables), isn't shared across all threads in
 	// java.
 	private static int countDown = 5;
 	private double d = 0;
 
-	public SimplePriorities(int priority) {
+	public ThreadShareClassStaticVariable(int priority) {
 		setPriority(priority);
 		System.out.println(getName() + ": my priority is " + priority);
 		// code below will return 'main' as threadName.
@@ -35,13 +35,13 @@ public class SimplePriorities extends Thread {
 	}
 
 	public static void main(String[] args) {
-		SimplePriorities s = new SimplePriorities(Thread.MAX_PRIORITY);
+		ThreadShareClassStaticVariable s = new ThreadShareClassStaticVariable(Thread.MAX_PRIORITY);
 		s.start();
 		for (int i = 0; i < 4; i++) {
-			SimplePriorities si = new SimplePriorities(Thread.MIN_PRIORITY);
+			ThreadShareClassStaticVariable si = new ThreadShareClassStaticVariable(Thread.MIN_PRIORITY);
 			si.start();
 		}
-		SimplePriorities si = new SimplePriorities(9);
+		ThreadShareClassStaticVariable si = new ThreadShareClassStaticVariable(9);
 		si.start();
 
 	}

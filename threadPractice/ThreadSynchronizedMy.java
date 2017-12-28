@@ -1,6 +1,6 @@
 package threadPractice;
 
-public class MyThreadSynchronized extends Thread {
+public class ThreadSynchronizedMy extends Thread {
 
 	public boolean prepared = false;
 
@@ -31,7 +31,7 @@ public class MyThreadSynchronized extends Thread {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		MyThreadSynchronized myThread = new MyThreadSynchronized();
+		ThreadSynchronizedMy myThread = new ThreadSynchronizedMy();
 		myThread.start();
 		Thread.sleep(10);
 		System.out.println("main:the thread is " + myThread.getState());

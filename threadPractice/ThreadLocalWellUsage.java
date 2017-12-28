@@ -1,9 +1,9 @@
 package threadPractice;
 
-public class WellUsageThreadLocal extends Object implements Runnable {
+public class ThreadLocalWellUsage extends Object implements Runnable {
 	private ThreadID var;
 
-	public WellUsageThreadLocal(ThreadID v) {
+	public ThreadLocalWellUsage(ThreadID v) {
 		this.var = v;
 	}
 
@@ -23,7 +23,7 @@ public class WellUsageThreadLocal extends Object implements Runnable {
 
 	public static void main(String[] args) {
 		ThreadID tid = new ThreadID();
-		WellUsageThreadLocal shared = new WellUsageThreadLocal(tid);
+		ThreadLocalWellUsage shared = new ThreadLocalWellUsage(tid);
 
 		try {
 			Thread threadA = new Thread(shared, "threadA");

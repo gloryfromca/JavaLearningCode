@@ -1,9 +1,9 @@
 package threadPractice;
 
-public class UsageThreadLocal implements Runnable {
+public class ThreadLocalMyUsage implements Runnable {
 	private AnotherThreadID<Long> var;
 
-	public UsageThreadLocal(AnotherThreadID<Long> v) {
+	public ThreadLocalMyUsage(AnotherThreadID<Long> v) {
 		this.var = v;
 	}
 
@@ -30,7 +30,7 @@ public class UsageThreadLocal implements Runnable {
 				return new Long(100);
 			}
 		};
-		UsageThreadLocal shared = new UsageThreadLocal(tid);
+		ThreadLocalMyUsage shared = new ThreadLocalMyUsage(tid);
 
 		try {
 			Thread threadA = new Thread(shared, "threadA");
