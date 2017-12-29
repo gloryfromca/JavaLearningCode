@@ -2,8 +2,9 @@ package threadPractice;
 
 public class ThreadShareClassStaticVariable extends Thread {
 	// class static variables are shared across all threads in java.
-	// a normal variable (instance variables), isn't shared across all threads in
+	// a normal variable (instance variables) isn't shared across all threads in
 	// java.
+	// you can try to comment out `static` keyword.
 	private static int countDown = 5;
 	private double d = 0;
 
@@ -24,12 +25,12 @@ public class ThreadShareClassStaticVariable extends Thread {
 			System.out.println(getName() + ": countDown:" + countDown);
 			// code below will not work, because threads don't share anything except class
 			// static variables.
-			// synchronized (this) {
-			if (--countDown <= 0) {
-				System.out.println(getName() + ": all opportunities to calculate are used up!");
-				return;
+//			synchronized (this) {
+				if (--countDown <= 0) {
+					System.out.println(getName() + ": all opportunities to calculate are used up!");
+					return;
+//				}
 			}
-
 		}
 
 	}

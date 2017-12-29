@@ -10,7 +10,7 @@ public class ThreadShareOneObject implements Runnable {
 		}
 	}
 
-	// volatile can't stop threads from interleaving.
+	// volatile can't stop threads from interleaving (not atomic).
 	private int countDown = 8;
 
 	@Override
@@ -22,7 +22,8 @@ public class ThreadShareOneObject implements Runnable {
 			synchronized (this) {
 				System.out.println(Thread.currentThread().getName() + " countDown before sleep is " + countDown);
 				countDown--;
-				// you really do "countDown--", then sleep(), you will find `countDown` is less than you held.
+				// you really do "countDown--", then sleep(), you will find `countDown` is less
+				// than you held.
 				try {
 					Thread.sleep((long) Math.random());
 				} catch (InterruptedException e) {
