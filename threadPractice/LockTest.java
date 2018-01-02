@@ -1,10 +1,8 @@
 package threadPractice;
 
-import com.sun.xml.internal.ws.db.glassfish.BridgeWrapper;
-
 public class LockTest {
-	public static String a1="a1";
-	public static String a2="a2";
+	public static String a1 = "a1";
+	public static String a2 = "a2";
 
 	public static void main(String[] args) {
 		new Thread(new LockA()).start();
@@ -12,7 +10,8 @@ public class LockTest {
 	}
 
 }
-class LockA implements Runnable{
+
+class LockA implements Runnable {
 
 	@Override
 	public void run() {
@@ -28,15 +27,14 @@ class LockA implements Runnable{
 					e.printStackTrace();
 				}
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 }
 
-class LockB implements Runnable{
+class LockB implements Runnable {
 
 	@Override
 	public void run() {
@@ -52,10 +50,9 @@ class LockB implements Runnable{
 					e.printStackTrace();
 				}
 			}
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 }
